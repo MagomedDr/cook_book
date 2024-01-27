@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes Without {{ product.name }}</title>
+</head>
+<body>
+    <h2>Рецепты без {{ product.name }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Recipe ID</th>
+                <th>Recipe Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipes_without_product %}
+            <tr>
+                <td>{{ recipe.id }}</td>
+                <td>{{ recipe.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Рецепты с {{ product.name }} менее 10 г</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Recipe ID</th>
+                <th>Recipe Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipes_less_than_10g %}
+            <tr>
+                <td>{{ recipe.id }}</td>
+                <td>{{ recipe.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
